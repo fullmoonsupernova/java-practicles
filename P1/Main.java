@@ -32,7 +32,7 @@ class Student {
     }
 }
 
-public class Practical1 {
+public class Main {
     public static void main(String[] args) {
         Student s1 = new Student(1, "Rahul", 85, 90, 80);
         Student s2 = new Student(2, "Aman", 75, 80, 85);
