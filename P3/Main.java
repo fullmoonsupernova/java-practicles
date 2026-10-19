@@ -18,7 +18,7 @@ class AllInOnePrinter implements Printable, Scannable {
     }
 }
 
-public class Practical3A {
+public class Main {
     public static void main(String[] args) {
         AllInOnePrinter printer = new AllInOnePrinter();
 
@@ -54,7 +54,7 @@ class SmartPrinter extends Device
     }
 }
 
-public class Practical3B {
+public class Main {
     public static void main(String[] args) {
         SmartPrinter printer = new SmartPrinter();
 
