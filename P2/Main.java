@@ -55,3 +55,43 @@ public class Main {
         m.displayManager();
     }
 }
+
+// hierachical inheritance 
+
+class Shape {
+    void display() {
+        System.out.println("This is a shape.");
+    }
+}
+
+class Circle extends Shape {
+    double radius = 5;
+
+    void calculateArea() {
+        System.out.println(
+                "Area of Circle: " + (Math.PI * radius * radius));
+    }
+}
+
+class Rectangle extends Shape {
+    double length = 10;
+    double breadth = 5;
+
+    void calculateArea() {
+        System.out.println(
+                "Area of Rectangle: " + (length * breadth));
+    }
+}
+
+public class Practical2C {
+    public static void main(String[] args) {
+        Circle c = new Circle();
+        Rectangle r = new Rectangle();
+
+        c.display();
+        c.calculateArea();
+
+        r.display();
+        r.calculateArea();
+    }
+}
