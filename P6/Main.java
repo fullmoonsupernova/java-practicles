@@ -1,42 +1,66 @@
 
-class ComplexNumber {
-    int real, imaginary;
+class Book {
+    String title;
+    String author;
+    double price;
 
-    ComplexNumber(int r, int i) {
-        real = r;
-        imaginary = i;
+    // Default Constructor
+    Book() {
+        title = "Unknown";
+        author = "Unknown";
+        price = 0;
     }
 
-    ComplexNumber add(ComplexNumber c) {
-        int r = real + c.real;
-        int i = imaginary + c.imaginary;
-        return new ComplexNumber(r, i);
+    // Parameterized Constructor
+    Book(String t, String a, double p) {
+        title = t;
+        author = a;
+        price = p;
+    }
+
+    // Copy Constructor
+    Book(Book b) {
+        title = b.title;
+        author = b.author;
+        price = b.price;
     }
 
     void display() {
-        System.out.println(real + " + " + imaginary + "i");
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("Price: Rs. " + price);
+        System.out.println();
     }
 }
 
 public class Main {
     public static void main(String[] args) {
 
-        ComplexNumber c1 = new ComplexNumber(5, 3);
-        ComplexNumber c2 = new ComplexNumber(2, 4);
-
        
-        System.out.print("First Complex Number: ");
-        c1.display();
 
-        System.out.print("Second Complex Number: ");
-        c2.display();
+        Book b1 = new Book();
 
-        ComplexNumber result = c1.add(c2);
+        Book b2 = new Book(
+            "Java Programming", "James Gosling", 500
+        );
 
-        System.out.print("Addition Result: ");
-        result.display();
+        Book b3 = new Book(b2);
 
-        System.out.println("\nJava does not support custom operator overloading.");
-        System.out.println("Instead, methods like add() are used.");
+        System.out.println("1. Default Constructor:");
+        b1.display();
+
+        System.out.println("2. Parameterized Constructor:");
+        b2.display();
+
+        System.out.println("3. Copy Constructor:");
+        b3.display();
+
+        b3.price = 700;
+
+        System.out.println("After modifying copied object:");
+        b3.display();
+
+        System.out.println("Original Book:");
+        b2.display();
     }
 }
